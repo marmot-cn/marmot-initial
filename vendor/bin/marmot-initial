@@ -1,0 +1,4 @@
+#!/bin/bash
+
+baseDir='/var/www/html/src'
+vendorDir='/var/www/html/vendor/marmot-initial'
