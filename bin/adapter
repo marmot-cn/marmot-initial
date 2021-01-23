@@ -1,0 +1,230 @@
+#!/bin/bash
+
+function initial {
+	# 读取变量名称
+	name=$1
+	dst="$srcDir/${name}/Adapter/${name}"
+	utDst="$utDir/${name}/Adapter/${name}"
+	mockDst="$mockDir/${name}/Adapter/${name}"
+
+	mkdir -p "$dst/Query/Persistence/"
+	mkdir -p "$utDst/Query/Persistence/"
+	mkdir -p "$mockDst/Query/Persistence/"
+}
+
+function createCacheFile {
+	local dst="$dst/Query/Persistence/${name}Cache.php"
+	if [ -f $dst -a $overwrite = 0 ];then
+		runFail "$dst"
+	else
+		cp $vendorDir/template/src/Adapter/Query/Persistence/Cache.php $dst
+		sed -i -e "s/{@nameCaps}/${name}/g" $dst
+		sed -i -e "s/{@name}/${name,}/g" $dst
+		runSuccess "$dst"
+	fi
+}
+
+function createUtCacheFile {
+	local dst="$utDst/Query/Persistence/${name}CacheTest.php"
+	if [ -f $dst -a $overwrite = 0 ];then
+		runFail "$dst"
+	else
+		# 创建模型文件
+		cp $vendorDir/template/tests/ut/Adapter/Query/Persistence/Cache.php $dst
+		sed -i -e "s/{@nameCaps}/${name}/g" $dst
+		sed -i -e "s/{@name}/${name,}/g" $dst
+		runSuccess "$dst"
+	fi
+}
+
+function createMockCacheFile {
+	local dst="$mockDst/Query/Persistence/Mock${name}Cache.php"
+	if [ -f $dst -a $overwrite = 0 ];then
+		runFail "$dst"
+	else
+		# 创建模型文件
+		cp $vendorDir/template/tests/mock/Adapter/Query/Persistence/Cache.php $dst
+		sed -i -e "s/{@nameCaps}/${name}/g" $dst
+		sed -i -e "s/{@name}/${name,}/g" $dst
+		runSuccess "$dst"
+	fi
+}
+
+function createDbFile {
+	local dst="$dst/Query/Persistence/${name}Db.php"
+	if [ -f $dst -a $overwrite = 0 ];then
+		runFail "$dst"
+	else
+		cp $vendorDir/template/src/Adapter/Query/Persistence/Db.php $dst
+		sed -i -e "s/{@nameCaps}/${name}/g" $dst
+		sed -i -e "s/{@name}/${name,}/g" $dst
+		runSuccess "$dst"
+	fi
+}
+
+function createUtDbFile {
+	local dst="$utDst/Query/Persistence/${name}DbTest.php"
+	if [ -f $dst -a $overwrite = 0 ];then
+		runFail "$dst"
+	else
+		# 创建模型文件
+		cp $vendorDir/template/tests/ut/Adapter/Query/Persistence/Db.php $dst
+		sed -i -e "s/{@nameCaps}/${name}/g" $dst
+		sed -i -e "s/{@name}/${name,}/g" $dst
+		runSuccess "$dst"
+	fi
+}
+
+function createMockDbFile {
+	local dst="$mockDst/Query/Persistence/Mock${name}Db.php"
+	if [ -f $dst -a $overwrite = 0 ];then
+		runFail "$dst"
+	else
+		# 创建模型文件
+		cp $vendorDir/template/tests/mock/Adapter/Query/Persistence/Db.php $dst
+		sed -i -e "s/{@nameCaps}/${name}/g" $dst
+		sed -i -e "s/{@name}/${name,}/g" $dst
+		runSuccess "$dst"
+	fi
+}
+
+function createRowCacheQueryFile {
+	local dst="$dst/Query/${name}RowCacheQuery.php"
+	if [ -f $dst -a $overwrite = 0 ];then
+		runFail "$dst"
+	else
+		cp $vendorDir/template/src/Adapter/Query/RowCacheQuery.php $dst
+		sed -i -e "s/{@nameCaps}/${name}/g" $dst
+		sed -i -e "s/{@name}/${name,}/g" $dst
+		runSuccess "$dst"
+	fi
+}
+
+function createUtRowCacheQueryFile {
+	local dst="$utDst/Query/${name}RowCacheQueryTest.php"
+	if [ -f $dst -a $overwrite = 0 ];then
+		runFail "$dst"
+	else
+		# 创建模型文件
+		cp $vendorDir/template/tests/ut/Adapter/Query/RowCacheQuery.php $dst
+		sed -i -e "s/{@nameCaps}/${name}/g" $dst
+		sed -i -e "s/{@name}/${name,}/g" $dst
+		runSuccess "$dst"
+	fi
+}
+
+function createMockRowCacheQueryFile {
+	local dst="$mockDst/Query/Mock${name}RowCacheQuery.php"
+	if [ -f $dst -a $overwrite = 0 ];then
+		runFail "$dst"
+	else
+		# 创建模型文件
+		cp $vendorDir/template/tests/mock/Adapter/Query/RowCacheQuery.php $dst
+		sed -i -e "s/{@nameCaps}/${name}/g" $dst
+		sed -i -e "s/{@name}/${name,}/g" $dst
+		runSuccess "$dst"
+	fi
+}
+
+
+function createDbAdapterFile {
+	local dst="$dst/${name}DbAdapter.php"
+	if [ -f $dst -a $overwrite = 0 ];then
+		runFail "$dst"
+	else
+		cp $vendorDir/template/src/Adapter/DbAdapter.php $dst
+		sed -i -e "s/{@nameCaps}/${name}/g" $dst
+		sed -i -e "s/{@name}/${name,}/g" $dst
+		runSuccess "$dst"
+	fi
+}
+
+function createUtDbAdapterFile {
+	local dst="$utDst/${name}DbAdapterTest.php"
+	if [ -f $dst -a $overwrite = 0 ];then
+		runFail "$dst"
+	else
+		# 创建模型文件
+		cp $vendorDir/template/tests/ut/Adapter/DbAdapter.php $dst
+		sed -i -e "s/{@nameCaps}/${name}/g" $dst
+		sed -i -e "s/{@name}/${name,}/g" $dst
+		runSuccess "$dst"
+	fi
+}
+
+function createMockDbAdapterFile {
+	local dst="$mockDst/Mock${name}DbAdapter.php"
+	if [ -f $dst -a $overwrite = 0 ];then
+		runFail "$dst"
+	else
+		# 创建模型文件
+		cp $vendorDir/template/tests/mock/Adapter/DbAdapter.php $dst
+		sed -i -e "s/{@nameCaps}/${name}/g" $dst
+		sed -i -e "s/{@name}/${name,}/g" $dst
+		runSuccess "$dst"
+	fi
+}
+
+
+function createMockAdapterFile {
+	local dst="$dst/${name}MockAdapter.php"
+	if [ -f $dst -a $overwrite = 0 ];then
+		runFail "$dst"
+	else
+		cp $vendorDir/template/src/Adapter/DbMockAdapter.php $dst
+		sed -i -e "s/{@nameCaps}/${name}/g" $dst
+		sed -i -e "s/{@name}/${name,}/g" $dst
+		runSuccess "$dst"
+	fi
+}
+
+function createUtMockAdapterFile {
+	local dst="$utDst/${name}MockAdapterTest.php"
+	if [ -f $dst -a $overwrite = 0 ];then
+		runFail "$dst"
+	else
+		# 创建模型文件
+		cp $vendorDir/template/tests/ut/Adapter/DbMockAdapter.php $dst
+		sed -i -e "s/{@nameCaps}/${name}/g" $dst
+		sed -i -e "s/{@name}/${name,}/g" $dst
+		runSuccess "$dst"
+	fi
+}
+
+function createIAdapterFile {
+	local dst="$dst/I${name}Adapter.php"
+	if [ -f $dst -a $overwrite = 0 ];then
+		runFail "$dst"
+	else
+		cp $vendorDir/template/src/Adapter/IAdapter.php $dst
+		sed -i -e "s/{@nameCaps}/${name}/g" $dst
+		sed -i -e "s/{@name}/${name,}/g" $dst
+		runSuccess "$dst"
+	fi
+}
+
+function generate {
+	createCacheFile
+	createUtCacheFile
+	createMockCacheFile
+
+	createDbFile
+	createUtDbFile
+	createMockDbFile
+
+	createRowCacheQueryFile
+	createUtRowCacheQueryFile
+	createMockRowCacheQueryFile
+
+	createDbAdapterFile
+	createUtDbAdapterFile
+	createMockDbAdapterFile
+
+	createMockAdapterFile
+	createUtMockAdapterFile
+
+	createIAdapterFile
+}
+
+initial $1
+generate

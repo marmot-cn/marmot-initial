@@ -1,0 +1,43 @@
+#!/bin/bash
+
+function initial {
+	# 读取变量名称
+	name=$1
+	utDst="$utDir/${name}/Utils"
+
+	mkdir -p $utDst	
+}
+
+function createUtilsFile {
+	local dst="$utDst/${name}Utils.php"
+	if [ -f $dst -a $overwrite = 0 ];then
+		runFail "$dst"
+	else
+		# 创建模型文件
+		cp $vendorDir/template/tests/ut/Utils/Utils.php $dst
+		sed -i -e "s/{@nameCaps}/${name}/g" $dst
+		sed -i -e "s/{@name}/${name,}/g" $dst
+		runSuccess "$dst"
+	fi
+}
+
+function createMockFactoryFile {
+	local dst="$utDst/MockFactory.php"
+	if [ -f $dst -a $overwrite = 0 ];then
+		runFail "$dst"
+	else
+		# 创建模型文件
+		cp $vendorDir/template/tests/ut/Utils/MockFactory.php $dst
+		sed -i -e "s/{@nameCaps}/${name}/g" $dst
+		sed -i -e "s/{@name}/${name,}/g" $dst
+		runSuccess "$dst"
+	fi
+}
+
+function generate {
+	createUtilsFile
+	createMockFactoryFile
+}
+
+initial $1
+generate

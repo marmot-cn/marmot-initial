@@ -1,0 +1,59 @@
+#!/bin/bash
+
+function initial {
+	# 读取变量名称
+	name=$1
+	dst="$srcDir/${name}/Repository"
+	utDst="$utDir/${name}/Repository"
+	mockDst="$mockDir/${name}/Repository"
+
+	mkdir -p $dst
+	mkdir -p $utDst
+	mkdir -p $mockDst
+}
+
+function createMarmotRepositoryFile {
+	local dst="$dst/${name}Repository.php"
+	if [ -f $dst -a $overwrite = 0 ];then
+		runFail "$dst"
+	else
+		# 创建模型文件
+		cp $vendorDir/template/src/Repository/Marmot/Repository.php $dst
+		sed -i -e "s/{@nameCaps}/${name}/g" $dst
+		sed -i -e "s/{@name}/${name,}/g" $dst
+		runSuccess "$dst"
+	fi
+}
+
+function createMarmotUtRepositoryFile {
+	local dst="$utDst/${name}RepositoryTest.php"
+	if [ -f $dst -a $overwrite = 0 ];then
+		runFail "$dst"
+	else
+		cp $vendorDir/template/tests/ut/Repository/Marmot/Repository.php $dst
+		sed -i -e "s/{@nameCaps}/${name}/g" -e "s/{@name}/${name,}/g" $dst	
+		sed -i -e "s/{@name}/${name,}/g" $dst
+		runSuccess "$dst"
+	fi
+}
+
+function createMockRepositoryFile {
+	local dst="$mockDst/Mock${name}Repository.php"
+	if [ -f $dst -a $overwrite = 0 ];then
+		runFail "$dst"
+	else
+		cp $vendorDir/template/tests/mock/Repository/Repository.php $dst
+		sed -i -e "s/{@nameCaps}/${name}/g" $dst
+		sed -i -e "s/{@name}/${name,}/g" $dst
+		runSuccess "$dst"
+	fi
+}
+
+function generate {
+	createMarmotRepositoryFile
+	createMarmotUtRepositoryFile
+	createMockRepositoryFile
+}
+
+initial $1
+generate

@@ -1,4 +1,36 @@
 #!/bin/bash
 
-baseDir='/var/www/html/src'
-vendorDir='/var/www/html/vendor/marmot-initial'
+export baseDir="/var/www/html"
+export srcDir="$baseDir/src"
+export utDir="$baseDir/tests/ut/src"
+export mockDir="$baseDir/tests/mock"
+export vendorDir="/var/www/html/vendor/marmot/marmot-initial"
+
+source "$vendorDir/common/logfunc"
+export -f runSuccess
+export -f runFail
+
+source "$vendorDir/common/helpfunc"
+
+
+# 区分 后端服务层 和 前端服务层
+# cat "$baseDir/composer.json" | grep "monkey-framework"
+
+# echo $?
+
+# 参数
+# --overwrite 复写
+
+export overwrite=0
+
+case $2 in
+'--overwrite') 
+	export overwrite=1;;
+*)
+esac
+
+chmod +x $vendorDir/bin/*
+for script in `ls $vendorDir/bin/*`; 
+do
+	$script $1
+done

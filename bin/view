@@ -1,0 +1,43 @@
+#!/bin/bash
+
+function initial {
+	# 读取变量名称
+	name=$1
+	dst="$srcDir/${name}/View"
+
+	mkdir -p $dst
+}
+
+function createViewFile {
+	local dst="$dst/${name}View.php"
+	if [ -f $dst -a $overwrite = 0 ];then
+		runFail "$dst"
+	else
+		# 创建模型文件
+		cp $vendorDir/template/src/View/Marmot/View.php $dst
+		sed -i -e "s/{@nameCaps}/${name}/g" $dst
+		sed -i -e "s/{@name}/${name,}/g" $dst
+		runSuccess "$dst"
+	fi
+}
+
+function createSchemaFile {
+	local dst="$dst/${name}Schema.php"
+	if [ -f $dst -a $overwrite = 0 ];then
+		runFail "$dst"
+	else
+		# 创建模型文件
+		cp $vendorDir/template/src/View/Marmot/Schema.php $dst
+		sed -i -e "s/{@nameCaps}/${name}/g" $dst
+		sed -i -e "s/{@name}/${name,}/g" $dst
+		runSuccess "$dst"
+	fi
+}
+
+function generate {
+	createViewFile
+	createSchemaFile
+}
+
+initial $1
+generate
