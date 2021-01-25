@@ -12,7 +12,6 @@ export -f runFail
 
 source "$vendorDir/common/helpfunc"
 
-
 # 区分 后端服务层 和 前端服务层
 # cat "$baseDir/composer.json" | grep "monkey-framework"
 
@@ -21,8 +20,13 @@ source "$vendorDir/common/helpfunc"
 # 参数
 # --overwrite 复写
 
-export overwrite=0
+if [ "$1" = "" ];then
+	menu
+	exit
+fi
 
+
+export overwrite=0
 case $2 in
 '--overwrite') 
 	export overwrite=1;;
