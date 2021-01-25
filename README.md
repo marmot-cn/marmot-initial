@@ -18,6 +18,13 @@
 marmot-initial Options:
 
 --overwrite: 覆盖已经生成的文件
+--namespace=xx: 命名空间, 用于在已有命名空间内生成文件
+```
+
+```shell
+在News模块下生成Article模块
+
+vendor/bin/marmot-initial Article --overwrite --namespace=News
 ```
 
 ### 生成代码
