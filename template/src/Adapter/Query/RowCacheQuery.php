@@ -8,7 +8,7 @@ class {@nameCaps}RowCacheQuery extends RowCacheQuery
     public function __construct()
     {
         parent::__construct(
-            '{@name}_id',
+            '{@nameUnderScore}_id',
             new Persistence\{@nameCaps}Cache(),
             new Persistence\{@nameCaps}Db()
         );

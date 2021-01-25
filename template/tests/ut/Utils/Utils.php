@@ -5,13 +5,13 @@ trait {@nameCaps}Utils
 {
     private function compareArrayAndObject(
         array $expectedArray,
-        $dictionary
+        ${@name}
     ) {
-        $this->assertEquals($expectedArray['{@name}_id'], $dictionary->getId());
+        $this->assertEquals($expectedArray['{@nameUnderScore}_id'], ${@name}->getId());
 
-        $this->assertEquals($expectedArray['status'], $dictionary->getStatus());
-        $this->assertEquals($expectedArray['create_time'], $dictionary->getCreateTime());
-        $this->assertEquals($expectedArray['update_time'], $dictionary->getUpdateTime());
-        $this->assertEquals($expectedArray['status_time'], $dictionary->getStatusTime());
+        $this->assertEquals($expectedArray['status'], ${@name}->getStatus());
+        $this->assertEquals($expectedArray['create_time'], ${@name}->getCreateTime());
+        $this->assertEquals($expectedArray['update_time'], ${@name}->getUpdateTime());
+        $this->assertEquals($expectedArray['status_time'], ${@name}->getStatusTime());
     }
 }

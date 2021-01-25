@@ -12,12 +12,12 @@ class {@nameCaps}DbTranslator implements ITranslator
 {
     public function arrayToObject(array $expression, ${@name} = null) : {@nameCaps}
     {
-        if (!isset($expression['{@name}_id'])) {
+        if (!isset($expression['{@nameUnderScore}_id'])) {
             return Null{@nameCaps}::getInstance();
         }
 
         if (${@name} == null) {
-            ${@name} = new {@nameCaps}($expression['{@name}_id']);
+            ${@name} = new {@nameCaps}($expression['{@nameUnderScore}_id']);
         }
 
         ${@name}->setStatus($expression['status']);
@@ -51,7 +51,7 @@ class {@nameCaps}DbTranslator implements ITranslator
         $expression = array();
 
         if (in_array('id', $keys)) {
-            $expression['{@name}_id'] = ${@name}->getId();
+            $expression['{@nameUnderScore}_id'] = ${@name}->getId();
         }
 
         if (in_array('status', $keys)) {

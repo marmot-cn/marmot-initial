@@ -46,7 +46,7 @@ class {@nameCaps}DbTranslatorTest extends TestCase
     {
         ${@name} = {@nameCaps}MockFactory::generate{@nameCaps}(1);
 
-        $expression['{@name}_id'] = ${@name}->getId();
+        $expression['{@nameUnderScore}_id'] = ${@name}->getId();
 
         $expression['status'] = ${@name}->getStatus();
         $expression['status_time'] = ${@name}->getStatusTime();

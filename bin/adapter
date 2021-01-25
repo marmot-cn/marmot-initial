@@ -3,6 +3,7 @@
 function initial {
 	# 读取变量名称
 	name=$1
+	nameUnderScore=`echo "${name,}" | sed 's/[A-Z]/_\l&/g'`
 	dst="$srcDir/${namespace}/Adapter/${name}"
 	utDst="$utDir/${namespace}/Adapter/${name}"
 	mockDst="$mockDir/${namespace}/Adapter/${name}"
@@ -54,6 +55,7 @@ function createDbFile {
 	else
 		cp $vendorDir/template/src/Adapter/Query/Persistence/Db.php $dst
 		sed -i -e "s/{@nameCaps}/${name}/g" -e "s/{@name}/${name,}/g" -e "s/{@namespaceCaps}/${namespace}/g" $dst
+		sed -i -e "s/{@nameUnderScore}/${nameUnderScore}/g" $dst
 		runSuccess "$dst"
 	fi
 }
@@ -89,6 +91,7 @@ function createRowCacheQueryFile {
 	else
 		cp $vendorDir/template/src/Adapter/Query/RowCacheQuery.php $dst
 		sed -i -e "s/{@nameCaps}/${name}/g" -e "s/{@name}/${name,}/g" -e "s/{@namespaceCaps}/${namespace}/g" $dst
+		sed -i -e "s/{@nameUnderScore}/${nameUnderScore}/g" $dst
 		runSuccess "$dst"
 	fi
 }

@@ -5,7 +5,7 @@ use Marmot\Framework\Classes\Db;
 
 class {@nameCaps}Db extends Db
 {
-    const TABLE = '{@name}';
+    const TABLE = '{@nameUnderScore}';
 
     public function __construct()
     {

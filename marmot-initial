@@ -25,7 +25,6 @@ if [ "$1" = "" ];then
 	exit
 fi
 
-
 export overwrite=0
 export namespace=$1
 
