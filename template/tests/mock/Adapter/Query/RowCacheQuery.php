@@ -1,5 +1,5 @@
 <?php
-namespace {@nameCaps}\Adapter\{@nameCaps}\Query;
+namespace {@namespaceCaps}\Adapter\{@nameCaps}\Query;
 
 use Marmot\Framework\Interfaces\DbLayer;
 use Marmot\Interfaces\CacheLayer;

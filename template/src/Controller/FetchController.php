@@ -1,5 +1,5 @@
 <?php
-namespace {@nameCaps}\Controller;
+namespace {@namespaceCaps}\Controller;
 
 use Marmot\Interfaces\IView;
 use Marmot\Framework\Classes\Controller;
@@ -7,9 +7,9 @@ use Marmot\Framework\Classes\Controller;
 use Marmot\Framework\Common\Controller\IFetchController;
 use Marmot\Framework\Common\Controller\FetchControllerTrait;
 
-use {@nameCaps}\Adapter\{@nameCaps}\I{@nameCaps}Adapter;
-use {@nameCaps}\View\{@nameCaps}View;
-use {@nameCaps}\Repository\{@nameCaps}Repository;
+use {@namespaceCaps}\Adapter\{@nameCaps}\I{@nameCaps}Adapter;
+use {@namespaceCaps}\View\{@nameCaps}View;
+use {@namespaceCaps}\Repository\{@nameCaps}Repository;
 
 class {@nameCaps}FetchController extends Controller implements IFetchController
 {

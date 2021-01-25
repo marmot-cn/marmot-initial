@@ -1,7 +1,7 @@
 <?php
-namespace {@nameCaps}\Adapter\{@nameCaps};
+namespace {@namespaceCaps}\Adapter\{@nameCaps};
 
-use {@nameCaps}\Model\{@nameCaps};
+use {@namespaceCaps}\Model\{@nameCaps};
 
 interface I{@nameCaps}Adapter
 {

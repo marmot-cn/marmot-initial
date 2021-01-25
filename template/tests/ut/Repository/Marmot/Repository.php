@@ -1,13 +1,13 @@
 <?php
-namespace {@nameCaps}\Repository;
+namespace {@namespaceCaps}\Repository;
 
 use Prophecy\Argument;
 use PHPUnit\Framework\TestCase;
 
-use {@nameCaps}\Adapter\{@nameCaps}\I{@nameCaps}Adapter;
-use {@nameCaps}\Adapter\{@nameCaps}\{@nameCaps}DBAdapter;
+use {@namespaceCaps}\Adapter\{@nameCaps}\I{@nameCaps}Adapter;
+use {@namespaceCaps}\Adapter\{@nameCaps}\{@nameCaps}DBAdapter;
 
-use {@nameCaps}\Utils\MockFactory;
+use {@namespaceCaps}\Utils\{@nameCaps}MockFactory;
 
 class {@nameCaps}RepositoryTest extends TestCase
 {
@@ -43,11 +43,11 @@ class {@nameCaps}RepositoryTest extends TestCase
     public function testGetActualAdapter()
     {
         $this->assertInstanceOf(
-            '{@nameCaps}\Adapter\{@nameCaps}\I{@nameCaps}Adapter',
+            '{@namespaceCaps}\Adapter\{@nameCaps}\I{@nameCaps}Adapter',
             $this->mockRepository->getActualAdapter()
         );
         $this->assertInstanceOf(
-            '{@nameCaps}\Adapter\{@nameCaps}\{@nameCaps}DBAdapter',
+            '{@namespaceCaps}\Adapter\{@nameCaps}\{@nameCaps}DBAdapter',
             $this->mockRepository->getActualAdapter()
         );
     }
@@ -55,11 +55,11 @@ class {@nameCaps}RepositoryTest extends TestCase
     public function testGetMockAdapter()
     {
         $this->assertInstanceOf(
-            '{@nameCaps}\Adapter\{@nameCaps}\I{@nameCaps}Adapter',
+            '{@namespaceCaps}\Adapter\{@nameCaps}\I{@nameCaps}Adapter',
             $this->mockRepository->getMockAdapter()
         );
         $this->assertInstanceOf(
-            '{@nameCaps}\Adapter\{@nameCaps}\{@nameCaps}MockAdapter',
+            '{@namespaceCaps}\Adapter\{@nameCaps}\{@nameCaps}MockAdapter',
             $this->mockRepository->getMockAdapter()
         );
     }
@@ -119,7 +119,7 @@ class {@nameCaps}RepositoryTest extends TestCase
     public function testAdd()
     {
         $id = 1;
-        ${@name} = MockFactory::generate{@nameCaps}($id);
+        ${@name} = {@nameCaps}MockFactory::generate{@nameCaps}($id);
         $keys = array();
         
         $adapter = $this->prophesize(I{@nameCaps}Adapter::class);
@@ -135,7 +135,7 @@ class {@nameCaps}RepositoryTest extends TestCase
     public function testEdit()
     {
         $id = 1;
-        ${@name} = MockFactory::generate{@nameCaps}($id);
+        ${@name} = {@nameCaps}MockFactory::generate{@nameCaps}($id);
         $keys = array();
         
         $adapter = $this->prophesize(I{@nameCaps}Adapter::class);

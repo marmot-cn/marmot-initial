@@ -3,8 +3,8 @@
 function initial {
 	# 读取变量名称
 	name=$1
-	dst="$srcDir/${name}/Translator"
-	utDst="$utDir/${name}/Translator"	
+	dst="$srcDir/${namespace}/Translator"
+	utDst="$utDir/${namespace}/Translator"	
 
 	mkdir -p $dst
 	mkdir -p $utDst
@@ -17,8 +17,7 @@ function createDbTranslatorFile {
 	else
 		# 创建模型文件
 		cp $vendorDir/template/src/Translator/DbTranslator.php $dst
-		sed -i -e "s/{@nameCaps}/${name}/g" $dst
-		sed -i -e "s/{@name}/${name,}/g" $dst
+		sed -i -e "s/{@nameCaps}/${name}/g" -e "s/{@name}/${name,}/g" -e "s/{@namespaceCaps}/${namespace}/g" $dst
 		runSuccess "$dst"
 	fi
 }
@@ -29,8 +28,7 @@ function createUtDbTranslatorFile {
 		runFail "$dst"
 	else
 		cp $vendorDir/template/tests/ut/Translator/DbTranslator.php $dst
-		sed -i -e "s/{@nameCaps}/${name}/g" -e "s/{@name}/${name,}/g" $dst	
-		sed -i -e "s/{@name}/${name,}/g" $dst
+		sed -i -e "s/{@nameCaps}/${name}/g" -e "s/{@name}/${name,}/g" -e "s/{@namespaceCaps}/${namespace}/g" $dst
 		runSuccess "$dst"
 	fi
 }

@@ -1,13 +1,13 @@
 <?php
-namespace {@nameCaps}\Controller;
+namespace {@namespaceCaps}\Controller;
 
 use Marmot\Framework\Classes\CommandBus;
 
 use Common\WidgetRule\CommonWidgetRule;
 
-use {@nameCaps}\WidgetRule\{@nameCaps}WidgetRule;
-use {@nameCaps}\Repository\{@nameCaps}Repository;
-use {@nameCaps}\CommandHandler\{@nameCaps}\{@nameCaps}CommandHandlerFactory;
+use {@namespaceCaps}\WidgetRule\{@nameCaps}WidgetRule;
+use {@namespaceCaps}\Repository\{@nameCaps}Repository;
+use {@namespaceCaps}\CommandHandler\{@nameCaps}\{@nameCaps}CommandHandlerFactory;
 
 trait {@nameCaps}ControllerTrait
 {

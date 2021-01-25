@@ -1,7 +1,7 @@
 <?php
-namespace {@nameCaps}\Repository;
+namespace {@namespaceCaps}\Repository;
 
-use {@nameCaps}\Adapter\{@nameCaps}\I{@nameCaps}Adapter;
+use {@namespaceCaps}\Adapter\{@nameCaps}\I{@nameCaps}Adapter;
 
 class Mock{@nameCaps}Repository extends {@nameCaps}Repository
 {

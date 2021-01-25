@@ -1,14 +1,14 @@
 <?php
-namespace {@nameCaps}\Adapter\{@nameCaps};
+namespace {@namespaceCaps}\Adapter\{@nameCaps};
 
 use Marmot\Interfaces\INull;
 
 use Marmot\Framework\Common\Adapter\DbAdapterTrait;
 
-use {@nameCaps}\Model\{@nameCaps};
-use {@nameCaps}\Model\Null{@nameCaps};
-use {@nameCaps}\Translator\{@nameCaps}DBTranslator;
-use {@nameCaps}\Adapter\{@nameCaps}\Query\{@nameCaps}RowCacheQuery;
+use {@namespaceCaps}\Model\{@nameCaps};
+use {@namespaceCaps}\Model\Null{@nameCaps};
+use {@namespaceCaps}\Translator\{@nameCaps}DBTranslator;
+use {@namespaceCaps}\Adapter\{@nameCaps}\Query\{@nameCaps}RowCacheQuery;
 
 class {@nameCaps}DBAdapter implements I{@nameCaps}Adapter
 {

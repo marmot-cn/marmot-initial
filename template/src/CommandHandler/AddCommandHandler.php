@@ -1,11 +1,11 @@
 <?php
-namespace {@nameCaps}\CommandHandler\{@nameCaps};
+namespace {@namespaceCaps}\CommandHandler\{@nameCaps};
 
 use Marmot\Interfaces\ICommandHandler;
 use Marmot\Interfaces\ICommand;
 
-use {@nameCaps}\Command\{@nameCaps}\Add{@nameCaps}Command;
-use {@nameCaps}\Model\{@nameCaps};
+use {@namespaceCaps}\Command\{@nameCaps}\Add{@nameCaps}Command;
+use {@namespaceCaps}\Model\{@nameCaps};
 
 class Add{@nameCaps}CommandHandler implements ICommandHandler
 {

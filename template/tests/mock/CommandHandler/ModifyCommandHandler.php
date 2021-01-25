@@ -1,7 +1,7 @@
 <?php
-namespace {@nameCaps}\CommandHandler\{@nameCaps};
+namespace {@namespaceCaps}\CommandHandler\{@nameCaps};
 
-use {@nameCaps}\Adapter\{@nameCaps}\I{@nameCaps}Adapter;
+use {@namespaceCaps}\Adapter\{@nameCaps}\I{@nameCaps}Adapter;
 
 class Mock{@operateCaps}{@nameCaps}CommandHandler extends Edit{@nameCaps}CommandHandler
 {

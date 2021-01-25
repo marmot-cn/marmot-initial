@@ -1,15 +1,15 @@
 <?php
-namespace {@nameCaps}\Controller;
+namespace {@namespaceCaps}\Controller;
 
 use PHPUnit\Framework\TestCase;
 use Prophecy\Argument;
 
 use Marmot\Core;
 
-use {@nameCaps}\Adapter\{@nameCaps}\I{@nameCaps}Adapter;
-use {@nameCaps}\Model\Null{@nameCaps};
-use {@nameCaps}\Model\{@nameCaps};
-use {@nameCaps}\View\{@nameCaps}View;
+use {@namespaceCaps}\Adapter\{@nameCaps}\I{@nameCaps}Adapter;
+use {@namespaceCaps}\Model\Null{@nameCaps};
+use {@namespaceCaps}\Model\{@nameCaps};
+use {@namespaceCaps}\View\{@nameCaps}View;
 
 class {@nameCaps}FetchControllerTest extends TestCase
 {
@@ -50,7 +50,7 @@ class {@nameCaps}FetchControllerTest extends TestCase
         $controller = new Mock{@nameCaps}FetchController();
 
         $this->assertInstanceOf(
-            '{@nameCaps}\Adapter\{@nameCaps}\I{@nameCaps}Adapter',
+            '{@namespaceCaps}\Adapter\{@nameCaps}\I{@nameCaps}Adapter',
             $controller->getRepository()
         );
     }
@@ -60,7 +60,7 @@ class {@nameCaps}FetchControllerTest extends TestCase
         $controller = new Mock{@nameCaps}FetchController();
 
         $this->assertInstanceOf(
-            '{@nameCaps}\View\{@nameCaps}View',
+            '{@namespaceCaps}\View\{@nameCaps}View',
             $controller->generateView('')
         );
     }

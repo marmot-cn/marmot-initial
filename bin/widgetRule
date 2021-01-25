@@ -3,8 +3,8 @@
 function initial {
 	# 读取变量名称
 	name=$1
-	dst="$srcDir/${name}/WidgetRule"
-	utDst="$utDir/${name}/WidgetRule"	
+	dst="$srcDir/${namespace}/WidgetRule"
+	utDst="$utDir/${namespace}/WidgetRule"	
 
 	mkdir -p $dst
 	mkdir -p $utDst
@@ -17,7 +17,7 @@ function createWidgetRuleFile {
 	else
 		# 创建模型文件
 		cp $vendorDir/template/src/WidgetRule/WidgetRule.php $dst
-		sed -i -e "s/{@nameCaps}/${name}/g" $dst
+		sed -i -e "s/{@nameCaps}/${name}/g" -e "s/{@name}/${name,}/g" -e "s/{@namespaceCaps}/${namespace}/g" $dst
 		runSuccess "$dst"
 	fi
 }
@@ -28,7 +28,7 @@ function createUtWidgetRuleFile {
 		runFail "$dst"
 	else
 		cp $vendorDir/template/tests/ut/WidgetRule/WidgetRule.php $dst
-		sed -i -e "s/{@nameCaps}/${name}/g" -e "s/{@name}/${name,}/g" $dst	
+		sed -i -e "s/{@nameCaps}/${name}/g" -e "s/{@name}/${name,}/g" -e "s/{@namespaceCaps}/${namespace}/g" $dst
 		runSuccess "$dst"
 	fi
 }

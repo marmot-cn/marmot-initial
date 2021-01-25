@@ -1,5 +1,5 @@
 <?php
-namespace {@nameCaps}\Controller;
+namespace {@namespaceCaps}\Controller;
 
 use Marmot\Framework\Classes\Controller;
 
@@ -7,8 +7,8 @@ use Marmot\Framework\Classes\CommandBus;
 
 use Common\WidgetRule\CommonWidgetRule;
 
-use {@nameCaps}\WidgetRule\{@nameCaps}WidgetRule;
-use {@nameCaps}\Repository\{@nameCaps}Repository;
+use {@namespaceCaps}\WidgetRule\{@nameCaps}WidgetRule;
+use {@namespaceCaps}\Repository\{@nameCaps}Repository;
 
 class Mock{@nameCaps}ControllerTrait extends Controller
 {

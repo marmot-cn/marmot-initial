@@ -1,5 +1,5 @@
 <?php
-namespace {@nameCaps}\Adapter\{@nameCaps}\Query\Persistence;
+namespace {@namespaceCaps}\Adapter\{@nameCaps}\Query\Persistence;
 
 class Mock{@nameCaps}Db extends {@nameCaps}Db
 {

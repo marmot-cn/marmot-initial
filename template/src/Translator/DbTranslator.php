@@ -1,12 +1,12 @@
 <?php
-namespace {@nameCaps}\Translator;
+namespace {@namespaceCaps}\Translator;
 
 use Marmot\Interfaces\ITranslator;
 
 use UserGroup\Model\UserGroup;
 
-use {@nameCaps}\Model\{@nameCaps};
-use {@nameCaps}\Model\Null{@nameCaps};
+use {@namespaceCaps}\Model\{@nameCaps};
+use {@namespaceCaps}\Model\Null{@nameCaps};
 
 class {@nameCaps}DbTranslator implements ITranslator
 {

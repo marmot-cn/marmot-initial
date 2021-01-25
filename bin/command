@@ -3,8 +3,8 @@
 function initial {
 	# 读取变量名称
 	name=$1
-	dst="$srcDir/${name}/Command/${name}"
-	utDst="$utDir/${name}/Command/${name}"	
+	dst="$srcDir/${namespace}/Command/${name}"
+	utDst="$utDir/${namespace}/Command/${name}"	
 
 	mkdir -p $dst
 	mkdir -p $utDst
@@ -18,7 +18,7 @@ function createAddCommandFile {
 	else
 		# 创建模型文件
 		cp $vendorDir/template/src/Command/AddCommand.php $dst
-		sed -i -e "s/{@nameCaps}/${name}/g" $dst
+		sed -i -e "s/{@nameCaps}/${name}/g" -e "s/{@name}/${name,}/g" -e "s/{@namespaceCaps}/${namespace}/g" $dst
 		runSuccess "$dst"
 	fi
 }
@@ -31,7 +31,7 @@ function createUtAddCommandFile {
 	else
 		# 创建模型文件
 		cp $vendorDir/template/tests/ut/Command/AddCommand.php $dst
-		sed -i -e "s/{@nameCaps}/${name}/g" $dst
+		sed -i -e "s/{@nameCaps}/${name}/g" -e "s/{@name}/${name,}/g" -e "s/{@namespaceCaps}/${namespace}/g" $dst
 		runSuccess "$dst"
 	fi
 }
@@ -44,7 +44,7 @@ function createEditCommandFile {
 	else
 		# 创建模型文件
 		cp $vendorDir/template/src/Command/ModifyCommand.php $dst
-		sed -i -e "s/{@nameCaps}/${name}/g" $dst
+		sed -i -e "s/{@nameCaps}/${name}/g" -e "s/{@name}/${name,}/g" -e "s/{@namespaceCaps}/${namespace}/g" $dst
 		sed -i -e "s/{@operateCaps}/Edit/g" $dst
 		runSuccess "$dst"
 	fi
@@ -58,7 +58,7 @@ function createUtEditCommandFile {
 	else
 		# 创建模型文件
 		cp $vendorDir/template/tests/ut/Command/ModifyCommand.php $dst
-		sed -i -e "s/{@nameCaps}/${name}/g" $dst
+		sed -i -e "s/{@nameCaps}/${name}/g" -e "s/{@name}/${name,}/g" -e "s/{@namespaceCaps}/${namespace}/g" $dst
 		sed -i -e "s/{@operateCaps}/Edit/g" $dst
 		runSuccess "$dst"
 	fi

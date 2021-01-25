@@ -1,7 +1,7 @@
 <?php
-namespace {@nameCaps}\CommandHandler\{@nameCaps};
+namespace {@namespaceCaps}\CommandHandler\{@nameCaps};
 
-use {@nameCaps}\Model\{@nameCaps};
+use {@namespaceCaps}\Model\{@nameCaps};
 
 class MockAdd{@nameCaps}CommandHandler extends Add{@nameCaps}CommandHandler
 {

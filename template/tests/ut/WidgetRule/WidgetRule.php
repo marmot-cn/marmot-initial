@@ -1,5 +1,5 @@
 <?php
-namespace {@nameCaps}\WidgetRule;
+namespace {@namespaceCaps}\WidgetRule;
 
 use PHPUnit\Framework\TestCase;
 

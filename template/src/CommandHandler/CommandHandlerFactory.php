@@ -1,5 +1,5 @@
 <?php
-namespace {@nameCaps}\CommandHandler\{@nameCaps};
+namespace {@namespaceCaps}\CommandHandler\{@nameCaps};
 
 use Marmot\Interfaces\ICommandHandlerFactory;
 use Marmot\Interfaces\ICommandHandler;
@@ -9,10 +9,10 @@ use Marmot\Framework\Classes\NullCommandHandler;
 class {@nameCaps}CommandHandlerFactory implements ICommandHandlerFactory
 {
     const MAPS = array(
-        '{@nameCaps}\Command\{@nameCaps}\Add{@nameCaps}Command' =>
-        '{@nameCaps}\CommandHandler\{@nameCaps}\Add{@nameCaps}CommandHandler',
-        '{@nameCaps}\Command\{@nameCaps}\Edit{@nameCaps}Command' =>
-        '{@nameCaps}\CommandHandler\{@nameCaps}\Edit{@nameCaps}CommandHandler',
+        '{@namespaceCaps}\Command\{@nameCaps}\Add{@nameCaps}Command' =>
+        '{@namespaceCaps}\CommandHandler\{@nameCaps}\Add{@nameCaps}CommandHandler',
+        '{@namespaceCaps}\Command\{@nameCaps}\Edit{@nameCaps}Command' =>
+        '{@namespaceCaps}\CommandHandler\{@nameCaps}\Edit{@nameCaps}CommandHandler',
     );
 
     public function getHandler(ICommand $command) : ICommandHandler

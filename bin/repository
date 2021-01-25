@@ -3,9 +3,9 @@
 function initial {
 	# 读取变量名称
 	name=$1
-	dst="$srcDir/${name}/Repository"
-	utDst="$utDir/${name}/Repository"
-	mockDst="$mockDir/${name}/Repository"
+	dst="$srcDir/${namespace}/Repository"
+	utDst="$utDir/${namespace}/Repository"
+	mockDst="$mockDir/${namespace}/Repository"
 
 	mkdir -p $dst
 	mkdir -p $utDst
@@ -19,8 +19,7 @@ function createMarmotRepositoryFile {
 	else
 		# 创建模型文件
 		cp $vendorDir/template/src/Repository/Marmot/Repository.php $dst
-		sed -i -e "s/{@nameCaps}/${name}/g" $dst
-		sed -i -e "s/{@name}/${name,}/g" $dst
+		sed -i -e "s/{@nameCaps}/${name}/g" -e "s/{@name}/${name,}/g" -e "s/{@namespaceCaps}/${namespace}/g" $dst
 		runSuccess "$dst"
 	fi
 }
@@ -31,8 +30,7 @@ function createMarmotUtRepositoryFile {
 		runFail "$dst"
 	else
 		cp $vendorDir/template/tests/ut/Repository/Marmot/Repository.php $dst
-		sed -i -e "s/{@nameCaps}/${name}/g" -e "s/{@name}/${name,}/g" $dst	
-		sed -i -e "s/{@name}/${name,}/g" $dst
+		sed -i -e "s/{@nameCaps}/${name}/g" -e "s/{@name}/${name,}/g" -e "s/{@namespaceCaps}/${namespace}/g" $dst
 		runSuccess "$dst"
 	fi
 }
@@ -43,8 +41,7 @@ function createMockRepositoryFile {
 		runFail "$dst"
 	else
 		cp $vendorDir/template/tests/mock/Repository/Repository.php $dst
-		sed -i -e "s/{@nameCaps}/${name}/g" $dst
-		sed -i -e "s/{@name}/${name,}/g" $dst
+		sed -i -e "s/{@nameCaps}/${name}/g" -e "s/{@name}/${name,}/g" -e "s/{@namespaceCaps}/${namespace}/g" $dst
 		runSuccess "$dst"
 	fi
 }

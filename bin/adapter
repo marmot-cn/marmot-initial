@@ -3,9 +3,9 @@
 function initial {
 	# 读取变量名称
 	name=$1
-	dst="$srcDir/${name}/Adapter/${name}"
-	utDst="$utDir/${name}/Adapter/${name}"
-	mockDst="$mockDir/${name}/Adapter/${name}"
+	dst="$srcDir/${namespace}/Adapter/${name}"
+	utDst="$utDir/${namespace}/Adapter/${name}"
+	mockDst="$mockDir/${namespace}/Adapter/${name}"
 
 	mkdir -p "$dst/Query/Persistence/"
 	mkdir -p "$utDst/Query/Persistence/"
@@ -18,8 +18,7 @@ function createCacheFile {
 		runFail "$dst"
 	else
 		cp $vendorDir/template/src/Adapter/Query/Persistence/Cache.php $dst
-		sed -i -e "s/{@nameCaps}/${name}/g" $dst
-		sed -i -e "s/{@name}/${name,}/g" $dst
+		sed -i -e "s/{@nameCaps}/${name}/g" -e "s/{@name}/${name,}/g" -e "s/{@namespaceCaps}/${namespace}/g" $dst
 		runSuccess "$dst"
 	fi
 }
@@ -31,8 +30,7 @@ function createUtCacheFile {
 	else
 		# 创建模型文件
 		cp $vendorDir/template/tests/ut/Adapter/Query/Persistence/Cache.php $dst
-		sed -i -e "s/{@nameCaps}/${name}/g" $dst
-		sed -i -e "s/{@name}/${name,}/g" $dst
+		sed -i -e "s/{@nameCaps}/${name}/g" -e "s/{@name}/${name,}/g" -e "s/{@namespaceCaps}/${namespace}/g" $dst
 		runSuccess "$dst"
 	fi
 }
@@ -44,8 +42,7 @@ function createMockCacheFile {
 	else
 		# 创建模型文件
 		cp $vendorDir/template/tests/mock/Adapter/Query/Persistence/Cache.php $dst
-		sed -i -e "s/{@nameCaps}/${name}/g" $dst
-		sed -i -e "s/{@name}/${name,}/g" $dst
+		sed -i -e "s/{@nameCaps}/${name}/g" -e "s/{@name}/${name,}/g" -e "s/{@namespaceCaps}/${namespace}/g" $dst
 		runSuccess "$dst"
 	fi
 }
@@ -56,8 +53,7 @@ function createDbFile {
 		runFail "$dst"
 	else
 		cp $vendorDir/template/src/Adapter/Query/Persistence/Db.php $dst
-		sed -i -e "s/{@nameCaps}/${name}/g" $dst
-		sed -i -e "s/{@name}/${name,}/g" $dst
+		sed -i -e "s/{@nameCaps}/${name}/g" -e "s/{@name}/${name,}/g" -e "s/{@namespaceCaps}/${namespace}/g" $dst
 		runSuccess "$dst"
 	fi
 }
@@ -69,8 +65,7 @@ function createUtDbFile {
 	else
 		# 创建模型文件
 		cp $vendorDir/template/tests/ut/Adapter/Query/Persistence/Db.php $dst
-		sed -i -e "s/{@nameCaps}/${name}/g" $dst
-		sed -i -e "s/{@name}/${name,}/g" $dst
+		sed -i -e "s/{@nameCaps}/${name}/g" -e "s/{@name}/${name,}/g" -e "s/{@namespaceCaps}/${namespace}/g" $dst
 		runSuccess "$dst"
 	fi
 }
@@ -82,8 +77,7 @@ function createMockDbFile {
 	else
 		# 创建模型文件
 		cp $vendorDir/template/tests/mock/Adapter/Query/Persistence/Db.php $dst
-		sed -i -e "s/{@nameCaps}/${name}/g" $dst
-		sed -i -e "s/{@name}/${name,}/g" $dst
+		sed -i -e "s/{@nameCaps}/${name}/g" -e "s/{@name}/${name,}/g" -e "s/{@namespaceCaps}/${namespace}/g" $dst
 		runSuccess "$dst"
 	fi
 }
@@ -94,8 +88,7 @@ function createRowCacheQueryFile {
 		runFail "$dst"
 	else
 		cp $vendorDir/template/src/Adapter/Query/RowCacheQuery.php $dst
-		sed -i -e "s/{@nameCaps}/${name}/g" $dst
-		sed -i -e "s/{@name}/${name,}/g" $dst
+		sed -i -e "s/{@nameCaps}/${name}/g" -e "s/{@name}/${name,}/g" -e "s/{@namespaceCaps}/${namespace}/g" $dst
 		runSuccess "$dst"
 	fi
 }
@@ -107,8 +100,7 @@ function createUtRowCacheQueryFile {
 	else
 		# 创建模型文件
 		cp $vendorDir/template/tests/ut/Adapter/Query/RowCacheQuery.php $dst
-		sed -i -e "s/{@nameCaps}/${name}/g" $dst
-		sed -i -e "s/{@name}/${name,}/g" $dst
+		sed -i -e "s/{@nameCaps}/${name}/g" -e "s/{@name}/${name,}/g" -e "s/{@namespaceCaps}/${namespace}/g" $dst
 		runSuccess "$dst"
 	fi
 }
@@ -120,8 +112,7 @@ function createMockRowCacheQueryFile {
 	else
 		# 创建模型文件
 		cp $vendorDir/template/tests/mock/Adapter/Query/RowCacheQuery.php $dst
-		sed -i -e "s/{@nameCaps}/${name}/g" $dst
-		sed -i -e "s/{@name}/${name,}/g" $dst
+		sed -i -e "s/{@nameCaps}/${name}/g" -e "s/{@name}/${name,}/g" -e "s/{@namespaceCaps}/${namespace}/g" $dst
 		runSuccess "$dst"
 	fi
 }
@@ -133,8 +124,7 @@ function createDbAdapterFile {
 		runFail "$dst"
 	else
 		cp $vendorDir/template/src/Adapter/DbAdapter.php $dst
-		sed -i -e "s/{@nameCaps}/${name}/g" $dst
-		sed -i -e "s/{@name}/${name,}/g" $dst
+		sed -i -e "s/{@nameCaps}/${name}/g" -e "s/{@name}/${name,}/g" -e "s/{@namespaceCaps}/${namespace}/g" $dst
 		runSuccess "$dst"
 	fi
 }
@@ -146,8 +136,7 @@ function createUtDbAdapterFile {
 	else
 		# 创建模型文件
 		cp $vendorDir/template/tests/ut/Adapter/DbAdapter.php $dst
-		sed -i -e "s/{@nameCaps}/${name}/g" $dst
-		sed -i -e "s/{@name}/${name,}/g" $dst
+		sed -i -e "s/{@nameCaps}/${name}/g" -e "s/{@name}/${name,}/g" -e "s/{@namespaceCaps}/${namespace}/g" $dst
 		runSuccess "$dst"
 	fi
 }
@@ -159,8 +148,7 @@ function createMockDbAdapterFile {
 	else
 		# 创建模型文件
 		cp $vendorDir/template/tests/mock/Adapter/DbAdapter.php $dst
-		sed -i -e "s/{@nameCaps}/${name}/g" $dst
-		sed -i -e "s/{@name}/${name,}/g" $dst
+		sed -i -e "s/{@nameCaps}/${name}/g" -e "s/{@name}/${name,}/g" -e "s/{@namespaceCaps}/${namespace}/g" $dst
 		runSuccess "$dst"
 	fi
 }
@@ -172,8 +160,7 @@ function createMockAdapterFile {
 		runFail "$dst"
 	else
 		cp $vendorDir/template/src/Adapter/DbMockAdapter.php $dst
-		sed -i -e "s/{@nameCaps}/${name}/g" $dst
-		sed -i -e "s/{@name}/${name,}/g" $dst
+		sed -i -e "s/{@nameCaps}/${name}/g" -e "s/{@name}/${name,}/g" -e "s/{@namespaceCaps}/${namespace}/g" $dst
 		runSuccess "$dst"
 	fi
 }
@@ -185,8 +172,7 @@ function createUtMockAdapterFile {
 	else
 		# 创建模型文件
 		cp $vendorDir/template/tests/ut/Adapter/DbMockAdapter.php $dst
-		sed -i -e "s/{@nameCaps}/${name}/g" $dst
-		sed -i -e "s/{@name}/${name,}/g" $dst
+		sed -i -e "s/{@nameCaps}/${name}/g" -e "s/{@name}/${name,}/g" -e "s/{@namespaceCaps}/${namespace}/g" $dst
 		runSuccess "$dst"
 	fi
 }
@@ -197,8 +183,7 @@ function createIAdapterFile {
 		runFail "$dst"
 	else
 		cp $vendorDir/template/src/Adapter/IAdapter.php $dst
-		sed -i -e "s/{@nameCaps}/${name}/g" $dst
-		sed -i -e "s/{@name}/${name,}/g" $dst
+		sed -i -e "s/{@nameCaps}/${name}/g" -e "s/{@name}/${name,}/g" -e "s/{@namespaceCaps}/${namespace}/g" $dst
 		runSuccess "$dst"
 	fi
 }

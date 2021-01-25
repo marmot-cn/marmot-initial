@@ -1,9 +1,9 @@
 <?php
-namespace {@nameCaps}\Utils;
+namespace {@namespaceCaps}\Utils;
 
-use {@nameCaps}\Model\{@nameCaps};
+use {@namespaceCaps}\Model\{@nameCaps};
 
-class MockFactory
+class {@nameCaps}MockFactory
 {
     public static function generate{@nameCaps}(
         int $id = 0,

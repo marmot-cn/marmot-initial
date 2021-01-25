@@ -1,7 +1,7 @@
 <?php
-namespace {@nameCaps}\Model;
+namespace {@namespaceCaps}\Model;
 
-use {@nameCaps}\Adapter\{@nameCaps}\I{@nameCaps}Adapter;
+use {@namespaceCaps}\Adapter\{@nameCaps}\I{@nameCaps}Adapter;
 
 class Mock{@nameCaps} extends {@nameCaps}
 {

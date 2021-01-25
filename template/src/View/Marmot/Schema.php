@@ -1,5 +1,5 @@
 <?php
-namespace {@nameCaps}\View;
+namespace {@namespaceCaps}\View;
 
 use Neomerx\JsonApi\Schema\SchemaProvider;
 

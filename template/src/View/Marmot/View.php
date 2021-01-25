@@ -1,5 +1,5 @@
 <?php
-namespace {@nameCaps}\View;
+namespace {@namespaceCaps}\View;
 
 use Marmot\Interfaces\IView;
 use Marmot\Framework\View\JsonApiTrait;

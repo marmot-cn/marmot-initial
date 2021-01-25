@@ -1,13 +1,13 @@
 <?php
-namespace {@nameCaps}\CommandHandler\{@nameCaps};
+namespace {@namespaceCaps}\CommandHandler\{@nameCaps};
 
 use PHPUnit\Framework\TestCase;
 
 use Marmot\Interfaces\ICommand;
 use Marmot\Framework\Classes\NullCommandHandler;
 
-use {@nameCaps}\Command\{@nameCaps}\Add{@nameCaps}Command;
-use {@nameCaps}\Command\{@nameCaps}\Edit{@nameCaps}Command;
+use {@namespaceCaps}\Command\{@nameCaps}\Add{@nameCaps}Command;
+use {@namespaceCaps}\Command\{@nameCaps}\Edit{@nameCaps}Command;
 
 class {@nameCaps}CommandHandlerFactoryTest extends TestCase
 {
@@ -43,7 +43,7 @@ class {@nameCaps}CommandHandlerFactoryTest extends TestCase
 
         $this->assertInstanceOf('Marmot\Interfaces\ICommandHandler', $commandHandler);
         $this->assertInstanceOf(
-            '{@nameCaps}\CommandHandler\{@nameCaps}\Add{@nameCaps}CommandHandler',
+            '{@namespaceCaps}\CommandHandler\{@nameCaps}\Add{@nameCaps}CommandHandler',
             $commandHandler
         );
     }
@@ -58,7 +58,7 @@ class {@nameCaps}CommandHandlerFactoryTest extends TestCase
 
         $this->assertInstanceOf('Marmot\Interfaces\ICommandHandler', $commandHandler);
         $this->assertInstanceOf(
-            '{@nameCaps}\CommandHandler\{@nameCaps}\Edit{@nameCaps}CommandHandler',
+            '{@namespaceCaps}\CommandHandler\{@nameCaps}\Edit{@nameCaps}CommandHandler',
             $commandHandler
         );
     }

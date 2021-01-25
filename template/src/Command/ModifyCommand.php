@@ -1,5 +1,5 @@
 <?php
-namespace {@nameCaps}\Command\{@nameCaps};
+namespace {@namespaceCaps}\Command\{@nameCaps};
 
 use Marmot\Interfaces\ICommand;
 

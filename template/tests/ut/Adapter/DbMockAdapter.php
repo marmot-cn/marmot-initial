@@ -1,12 +1,12 @@
 <?php
-namespace {@nameCaps}\Adapter\{@nameCaps};
+namespace {@namespaceCaps}\Adapter\{@nameCaps};
 
 use PHPUnit\Framework\TestCase;
 use Prophecy\Argument;
 
 use Marmot\Core;
 
-use {@nameCaps}\Model\{@nameCaps};
+use {@namespaceCaps}\Model\{@nameCaps};
 
 /**
  *
@@ -40,7 +40,7 @@ class {@nameCaps}MockAdapterTest extends TestCase
     public function testFetchOne()
     {
         $this->assertInstanceOf(
-            '{@nameCaps}\Model\{@nameCaps}',
+            '{@namespaceCaps}\Model\{@nameCaps}',
             $this->adapter->fetchOne(1)
         );
     }
@@ -51,7 +51,7 @@ class {@nameCaps}MockAdapterTest extends TestCase
 
         foreach ($list as $each) {
             $this->assertInstanceOf(
-                '{@nameCaps}\Model\{@nameCaps}',
+                '{@namespaceCaps}\Model\{@nameCaps}',
                 $each
             );
         }
@@ -63,7 +63,7 @@ class {@nameCaps}MockAdapterTest extends TestCase
 
         foreach ($list as $each) {
             $this->assertInstanceOf(
-                '{@nameCaps}\Model\{@nameCaps}',
+                '{@namespaceCaps}\Model\{@nameCaps}',
                 $each
             );
         }

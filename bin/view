@@ -3,7 +3,7 @@
 function initial {
 	# 读取变量名称
 	name=$1
-	dst="$srcDir/${name}/View"
+	dst="$srcDir/${namespace}/View"
 
 	mkdir -p $dst
 }
@@ -15,8 +15,7 @@ function createViewFile {
 	else
 		# 创建模型文件
 		cp $vendorDir/template/src/View/Marmot/View.php $dst
-		sed -i -e "s/{@nameCaps}/${name}/g" $dst
-		sed -i -e "s/{@name}/${name,}/g" $dst
+		sed -i -e "s/{@nameCaps}/${name}/g" -e "s/{@name}/${name,}/g" -e "s/{@namespaceCaps}/${namespace}/g" $dst
 		runSuccess "$dst"
 	fi
 }
@@ -28,8 +27,7 @@ function createSchemaFile {
 	else
 		# 创建模型文件
 		cp $vendorDir/template/src/View/Marmot/Schema.php $dst
-		sed -i -e "s/{@nameCaps}/${name}/g" $dst
-		sed -i -e "s/{@name}/${name,}/g" $dst
+		sed -i -e "s/{@nameCaps}/${name}/g" -e "s/{@name}/${name,}/g" -e "s/{@namespaceCaps}/${namespace}/g" $dst
 		runSuccess "$dst"
 	fi
 }

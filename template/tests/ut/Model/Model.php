@@ -1,5 +1,5 @@
 <?php
-namespace {@nameCaps}\Model;
+namespace {@namespaceCaps}\Model;
 
 use Marmot\Core;
 
@@ -33,7 +33,7 @@ class {@nameCaps}Test extends TestCase
     public function testGetRepository()
     {
         ${@name} = new Mock{@nameCaps}();
-        $this->assertInstanceOf('{@nameCaps}\Adapter\{@nameCaps}\I{@nameCaps}Adapter', ${@name}->getRepository());
+        $this->assertInstanceOf('{@namespaceCaps}\Adapter\{@nameCaps}\I{@nameCaps}Adapter', ${@name}->getRepository());
     }
 
     public function testAddSuccess()

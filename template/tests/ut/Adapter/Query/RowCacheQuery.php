@@ -1,5 +1,5 @@
 <?php
-namespace {@nameCaps}\Adapter\{@nameCaps}\Query;
+namespace {@namespaceCaps}\Adapter\{@nameCaps}\Query;
 
 use PHPUnit\Framework\TestCase;
 use Marmot\Core;
@@ -32,7 +32,7 @@ class {@nameCaps}RowCacheQueryTest extends TestCase
     public function testCorrectCacheLayer()
     {
         $this->assertInstanceof(
-            '{@nameCaps}\Adapter\{@nameCaps}\Query\Persistence\{@nameCaps}Cache',
+            '{@namespaceCaps}\Adapter\{@nameCaps}\Query\Persistence\{@nameCaps}Cache',
             $this->rowCacheQuery->getCacheLayer()
         );
     }
@@ -43,7 +43,7 @@ class {@nameCaps}RowCacheQueryTest extends TestCase
     public function testCorrectDbLayer()
     {
         $this->assertInstanceof(
-            '{@nameCaps}\Adapter\{@nameCaps}\Query\Persistence\{@nameCaps}Db',
+            '{@namespaceCaps}\Adapter\{@nameCaps}\Query\Persistence\{@nameCaps}Db',
             $this->rowCacheQuery->getDbLayer()
         );
     }

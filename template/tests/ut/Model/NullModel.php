@@ -1,5 +1,5 @@
 <?php
-namespace {@nameCaps}\Model;
+namespace {@namespaceCaps}\Model;
 
 use PHPUnit\Framework\TestCase;
 
@@ -17,9 +17,9 @@ class Null{@nameCaps}Test extends TestCase
         unset($this->department);
     }
 
-    public function testExtendsNews()
+    public function testExtends{@nameCaps}()
     {
-        $this->assertInstanceof('{@nameCaps}\Model\{@nameCaps}', $this->department);
+        $this->assertInstanceof('{@namespaceCaps}\Model\{@nameCaps}', $this->department);
     }
 
     public function testImplementsNull()

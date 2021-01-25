@@ -1,5 +1,5 @@
 <?php
-namespace {@nameCaps}\Controller;
+namespace {@namespaceCaps}\Controller;
 
 use PHPUnit\Framework\TestCase;
 use Prophecy\Argument;
@@ -21,7 +21,7 @@ class {@nameCaps}ControllerTraitTest extends TestCase
     public function testGet{@nameCaps}WidgetRule()
     {
         $this->assertInstanceOf(
-            '{@nameCaps}\WidgetRule\{@nameCaps}WidgetRule',
+            '{@namespaceCaps}\WidgetRule\{@nameCaps}WidgetRule',
             $this->trait->get{@nameCaps}WidgetRulePublic()
         );
     }
@@ -37,7 +37,7 @@ class {@nameCaps}ControllerTraitTest extends TestCase
     public function testGetRepository()
     {
         $this->assertInstanceOf(
-            '{@nameCaps}\Repository\{@nameCaps}Repository',
+            '{@namespaceCaps}\Repository\{@nameCaps}Repository',
             $this->trait->getRepositoryPublic()
         );
     }

@@ -1,15 +1,15 @@
 <?php
-namespace {@nameCaps}\Adapter\{@nameCaps};
+namespace {@namespaceCaps}\Adapter\{@nameCaps};
 
 use PHPUnit\Framework\TestCase;
 use Prophecy\Argument;
 
 use Marmot\Core;
 
-use {@nameCaps}\Model\{@nameCaps};
-use {@nameCaps}\Model\Null{@nameCaps};
-use {@nameCaps}\Translator\{@nameCaps}DbTranslator;
-use {@nameCaps}\Adapter\{@nameCaps}\Query\{@nameCaps}RowCacheQuery;
+use {@namespaceCaps}\Model\{@nameCaps};
+use {@namespaceCaps}\Model\Null{@nameCaps};
+use {@namespaceCaps}\Translator\{@nameCaps}DbTranslator;
+use {@namespaceCaps}\Adapter\{@nameCaps}\Query\{@nameCaps}RowCacheQuery;
 
 /**
  *
@@ -46,7 +46,7 @@ class {@nameCaps}DbAdapterTest extends TestCase
     public function testImplementsI{@nameCaps}Adapter()
     {
         $this->assertInstanceOf(
-            '{@nameCaps}\Adapter\{@nameCaps}\I{@nameCaps}Adapter',
+            '{@namespaceCaps}\Adapter\{@nameCaps}\I{@nameCaps}Adapter',
             $this->adapter
         );
     }
@@ -58,7 +58,7 @@ class {@nameCaps}DbAdapterTest extends TestCase
     {
         $adapter = new Mock{@nameCaps}DbAdapter();
         $this->assertInstanceOf(
-            '{@nameCaps}\Translator\{@nameCaps}DbTranslator',
+            '{@namespaceCaps}\Translator\{@nameCaps}DbTranslator',
             $adapter->getDbTranslator()
         );
     }
@@ -70,7 +70,7 @@ class {@nameCaps}DbAdapterTest extends TestCase
     {
         $adapter = new Mock{@nameCaps}DbAdapter();
         $this->assertInstanceOf(
-            '{@nameCaps}\Adapter\{@nameCaps}\Query\{@nameCaps}RowCacheQuery',
+            '{@namespaceCaps}\Adapter\{@nameCaps}\Query\{@nameCaps}RowCacheQuery',
             $adapter->getRowQuery()
         );
     }

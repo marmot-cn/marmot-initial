@@ -1,5 +1,5 @@
 <?php
-namespace {@nameCaps}\Model;
+namespace {@namespaceCaps}\Model;
 
 use Marmot\Interfaces\INull;
 

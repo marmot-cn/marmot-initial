@@ -3,7 +3,7 @@
 function initial {
 	# 读取变量名称
 	name=$1
-	utDst="$utDir/${name}/Utils"
+	utDst="$utDir/${namespace}/Utils"
 
 	mkdir -p $utDst	
 }
@@ -15,21 +15,19 @@ function createUtilsFile {
 	else
 		# 创建模型文件
 		cp $vendorDir/template/tests/ut/Utils/Utils.php $dst
-		sed -i -e "s/{@nameCaps}/${name}/g" $dst
-		sed -i -e "s/{@name}/${name,}/g" $dst
+		sed -i -e "s/{@nameCaps}/${name}/g" -e "s/{@name}/${name,}/g" -e "s/{@namespaceCaps}/${namespace}/g" $dst
 		runSuccess "$dst"
 	fi
 }
 
 function createMockFactoryFile {
-	local dst="$utDst/MockFactory.php"
+	local dst="$utDst/${name}MockFactory.php"
 	if [ -f $dst -a $overwrite = 0 ];then
 		runFail "$dst"
 	else
 		# 创建模型文件
 		cp $vendorDir/template/tests/ut/Utils/MockFactory.php $dst
-		sed -i -e "s/{@nameCaps}/${name}/g" $dst
-		sed -i -e "s/{@name}/${name,}/g" $dst
+		sed -i -e "s/{@nameCaps}/${name}/g" -e "s/{@name}/${name,}/g" -e "s/{@namespaceCaps}/${namespace}/g" $dst
 		runSuccess "$dst"
 	fi
 }

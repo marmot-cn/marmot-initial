@@ -1,5 +1,5 @@
 <?php
-namespace {@nameCaps}\Controller;
+namespace {@namespaceCaps}\Controller;
 
 use Marmot\Framework\Classes\Controller;
 use Marmot\Framework\Interfaces\IView;
@@ -10,11 +10,11 @@ use Marmot\Core;
 
 use Marmot\Framework\Common\Controller\IOperateController;
 
-use {@nameCaps}\Model\{@nameCaps};
-use {@nameCaps}\View\{@nameCaps}View;
+use {@namespaceCaps}\Model\{@nameCaps};
+use {@namespaceCaps}\View\{@nameCaps}View;
 
-use {@nameCaps}\Command\{@nameCaps}\Add{@nameCaps}Command;
-use {@nameCaps}\Command\{@nameCaps}\Edit{@nameCaps}Command;
+use {@namespaceCaps}\Command\{@nameCaps}\Add{@nameCaps}Command;
+use {@namespaceCaps}\Command\{@nameCaps}\Edit{@nameCaps}Command;
 
 class {@nameCaps}OperateController extends Controller implements IOperateController
 {

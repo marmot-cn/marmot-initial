@@ -1,13 +1,13 @@
 <?php
-namespace {@nameCaps}\CommandHandler\{@nameCaps};
+namespace {@namespaceCaps}\CommandHandler\{@nameCaps};
 
 use Prophecy\Argument;
 use PHPUnit\Framework\TestCase;
 
 use Marmot\Interfaces\ICommand;
 
-use {@nameCaps}\Model\{@nameCaps};
-use {@nameCaps}\Command\{@nameCaps}\Add{@nameCaps}Command;
+use {@namespaceCaps}\Model\{@nameCaps};
+use {@namespaceCaps}\Command\{@nameCaps}\Add{@nameCaps}Command;
 
 class Add{@nameCaps}CommandHandlerTest extends TestCase
 {
@@ -52,7 +52,7 @@ class Add{@nameCaps}CommandHandlerTest extends TestCase
     {
         $commandHandler = new MockAdd{@nameCaps}CommandHandler();
         $this->assertInstanceOf(
-            '{@nameCaps}\Model\{@nameCaps}',
+            '{@namespaceCaps}\Model\{@nameCaps}',
             $commandHandler->get{@nameCaps}()
         );
     }

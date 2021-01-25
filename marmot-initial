@@ -27,11 +27,19 @@ fi
 
 
 export overwrite=0
-case $2 in
-'--overwrite') 
-	export overwrite=1;;
-*)
-esac
+export namespace=$1
+
+for arg in $*; do
+	case $arg in
+	'--overwrite') 
+		export overwrite=1
+		;;
+	"--namespace="*)
+		eval $(echo $arg | awk -F "=" '{if(-n $2) print "export namespace="$2}')
+		;;
+	*)
+	esac
+done
 
 chmod +x $vendorDir/bin/*
 for script in `ls $vendorDir/bin/*`; 

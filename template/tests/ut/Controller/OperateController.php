@@ -1,5 +1,5 @@
 <?php
-namespace {@nameCaps}\Controller;
+namespace {@namespaceCaps}\Controller;
 
 use PHPUnit\Framework\TestCase;
 use Prophecy\Argument;
@@ -9,11 +9,11 @@ use Marmot\Framework\Classes\CommandBus;
 
 use Common\WidgetRule\CommonWidgetRule;
 
-use {@nameCaps}\Model\{@nameCaps};
-use {@nameCaps}\WidgetRule\{@nameCaps}WidgetRule;
-use {@nameCaps}\Repository\{@nameCaps}Repository;
-use {@nameCaps}\Command\{@nameCaps}\Add{@nameCaps}Command;
-use {@nameCaps}\Command\{@nameCaps}\Edit{@nameCaps}Command;
+use {@namespaceCaps}\Model\{@nameCaps};
+use {@namespaceCaps}\WidgetRule\{@nameCaps}WidgetRule;
+use {@namespaceCaps}\Repository\{@nameCaps}Repository;
+use {@namespaceCaps}\Command\{@nameCaps}\Add{@nameCaps}Command;
+use {@namespaceCaps}\Command\{@nameCaps}\Edit{@nameCaps}Command;
 
 class {@nameCaps}OperateControllerTest extends TestCase
 {

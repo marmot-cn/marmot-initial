@@ -1,16 +1,16 @@
 <?php
-namespace {@nameCaps}\Adapter\{@nameCaps};
+namespace {@namespaceCaps}\Adapter\{@nameCaps};
 
 use Marmot\Core;
 
-use {@nameCaps}\Model\{@nameCaps};
-use {@nameCaps}\Utils\MockFactory;
+use {@namespaceCaps}\Model\{@nameCaps};
+use {@namespaceCaps}\Utils\{@nameCaps}MockFactory;
 
 class {@nameCaps}MockAdapter implements I{@nameCaps}Adapter
 {
     public function fetchOne($id) : {@nameCaps}
     {
-        return MockFactory::generate{@nameCaps}($id);
+        return {@nameCaps}MockFactory::generate{@nameCaps}($id);
     }
 
     public function fetchList(array $ids) : array
@@ -20,7 +20,7 @@ class {@nameCaps}MockAdapter implements I{@nameCaps}Adapter
         ${@name}List = array();
 
         foreach ($ids as $id) {
-            ${@name}List[$id] = MockFactory::generate{@nameCaps}($id);
+            ${@name}List[$id] = {@nameCaps}MockFactory::generate{@nameCaps}($id);
         }
 
         return ${@name}List;

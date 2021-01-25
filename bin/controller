@@ -3,9 +3,9 @@
 function initial {
 	# 读取变量名称
 	name=$1
-	dst="$srcDir/${name}/Controller"
-	utDst="$utDir/${name}/Controller"	
-	mockDst="$mockDir/${name}/Controller"
+	dst="$srcDir/${namespace}/Controller"
+	utDst="$utDir/${namespace}/Controller"	
+	mockDst="$mockDir/${namespace}/Controller"
 
 	mkdir -p $dst
 	mkdir -p $utDst
@@ -19,8 +19,7 @@ function createFetchControllerFile {
 	else
 		# 创建模型文件
 		cp $vendorDir/template/src/Controller/FetchController.php $dst
-		sed -i -e "s/{@nameCaps}/${name}/g" $dst
-		sed -i -e "s/{@name}/${name,}/g" $dst
+		sed -i -e "s/{@nameCaps}/${name}/g" -e "s/{@name}/${name,}/g" -e "s/{@namespaceCaps}/${namespace}/g" $dst
 		runSuccess "$dst"
 	fi
 }
@@ -31,8 +30,7 @@ function createUtFetchControllerFile {
 		runFail "$dst"
 	else
 		cp $vendorDir/template/tests/ut/Controller/FetchController.php $dst
-		sed -i -e "s/{@nameCaps}/${name}/g" -e "s/{@name}/${name,}/g" $dst	
-		sed -i -e "s/{@name}/${name,}/g" $dst
+		sed -i -e "s/{@nameCaps}/${name}/g" -e "s/{@name}/${name,}/g" -e "s/{@namespaceCaps}/${namespace}/g" $dst
 		runSuccess "$dst"
 	fi
 }
@@ -43,8 +41,7 @@ function createMockFetchControllerFile {
 		runFail "$dst"
 	else
 		cp $vendorDir/template/tests/mock/Controller/FetchController.php $dst
-		sed -i -e "s/{@nameCaps}/${name}/g" $dst
-		sed -i -e "s/{@name}/${name,}/g" $dst
+		sed -i -e "s/{@nameCaps}/${name}/g" -e "s/{@name}/${name,}/g" -e "s/{@namespaceCaps}/${namespace}/g" $dst
 		runSuccess "$dst"
 	fi
 }
@@ -56,8 +53,7 @@ function createOperateControllerFile {
 	else
 		# 创建模型文件
 		cp $vendorDir/template/src/Controller/OperateController.php $dst
-		sed -i -e "s/{@nameCaps}/${name}/g" $dst
-		sed -i -e "s/{@name}/${name,}/g" $dst
+		sed -i -e "s/{@nameCaps}/${name}/g" -e "s/{@name}/${name,}/g" -e "s/{@namespaceCaps}/${namespace}/g" $dst
 		runSuccess "$dst"
 	fi
 }
@@ -68,8 +64,7 @@ function createUtOperateControllerFile {
 		runFail "$dst"
 	else
 		cp $vendorDir/template/tests/ut/Controller/OperateController.php $dst
-		sed -i -e "s/{@nameCaps}/${name}/g" -e "s/{@name}/${name,}/g" $dst	
-		sed -i -e "s/{@name}/${name,}/g" $dst
+		sed -i -e "s/{@nameCaps}/${name}/g" -e "s/{@name}/${name,}/g" -e "s/{@namespaceCaps}/${namespace}/g" $dst	
 		runSuccess "$dst"
 	fi
 }
@@ -81,8 +76,7 @@ function createControllerTraitFile {
 	else
 		# 创建模型文件
 		cp $vendorDir/template/src/Controller/ControllerTrait.php $dst
-		sed -i -e "s/{@nameCaps}/${name}/g" $dst
-		sed -i -e "s/{@name}/${name,}/g" $dst
+		sed -i -e "s/{@nameCaps}/${name}/g" -e "s/{@name}/${name,}/g" -e "s/{@namespaceCaps}/${namespace}/g" $dst
 		runSuccess "$dst"
 	fi
 }
@@ -93,8 +87,7 @@ function createUtControllerTraitFile {
 		runFail "$dst"
 	else
 		cp $vendorDir/template/tests/ut/Controller/ControllerTrait.php $dst
-		sed -i -e "s/{@nameCaps}/${name}/g" -e "s/{@name}/${name,}/g" $dst	
-		sed -i -e "s/{@name}/${name,}/g" $dst
+		sed -i -e "s/{@nameCaps}/${name}/g" -e "s/{@name}/${name,}/g" -e "s/{@namespaceCaps}/${namespace}/g" $dst
 		runSuccess "$dst"
 	fi
 }
@@ -105,8 +98,7 @@ function createMockControllerTraitFile {
 		runFail "$dst"
 	else
 		cp $vendorDir/template/tests/mock/Controller/ControllerTrait.php $dst
-		sed -i -e "s/{@nameCaps}/${name}/g" $dst
-		sed -i -e "s/{@name}/${name,}/g" $dst
+		sed -i -e "s/{@nameCaps}/${name}/g" -e "s/{@name}/${name,}/g" -e "s/{@namespaceCaps}/${namespace}/g" $dst
 		runSuccess "$dst"
 	fi
 }

@@ -3,9 +3,9 @@
 function initial {
 	# 读取变量名称
 	name=$1
-	dst="$srcDir/${name}/CommandHandler/${name}"
-	utDst="$utDir/${name}/CommandHandler/${name}"	
-	mockDst="$mockDir/${name}/CommandHandler/${name}"	
+	dst="$srcDir/${namespace}/CommandHandler/${name}"
+	utDst="$utDir/${namespace}/CommandHandler/${name}"	
+	mockDst="$mockDir/${namespace}/CommandHandler/${name}"	
 
 	# 创建模型路径
 	mkdir -p $dst
@@ -21,8 +21,7 @@ function createAddCommandHandlerFile {
 	else
 		# 创建模型文件
 		cp $vendorDir/template/src/CommandHandler/AddCommandHandler.php $dst
-		sed -i -e "s/{@nameCaps}/${name}/g" $dst
-		sed -i -e "s/{@name}/${name,}/g" $dst
+		sed -i -e "s/{@nameCaps}/${name}/g" -e "s/{@name}/${name,}/g" -e "s/{@namespaceCaps}/${namespace}/g" $dst
 		runSuccess "$dst"
 	fi
 }
@@ -35,8 +34,7 @@ function createUtAddCommandHandlerFile {
 	else
 		# 创建模型文件
 		cp $vendorDir/template/tests/ut/CommandHandler/AddCommandHandler.php $dst
-		sed -i -e "s/{@nameCaps}/${name}/g" $dst
-		sed -i -e "s/{@name}/${name,}/g" $dst
+		sed -i -e "s/{@nameCaps}/${name}/g" -e "s/{@name}/${name,}/g" -e "s/{@namespaceCaps}/${namespace}/g" $dst
 		runSuccess "$dst"
 	fi
 }
@@ -47,8 +45,7 @@ function createMockAddCommandHandlerFile {
 		runFail "$dst"
 	else
 		cp $vendorDir/template/tests/mock/CommandHandler/AddCommandHandler.php $dst
-		sed -i -e "s/{@nameCaps}/${name}/g" $dst
-		sed -i -e "s/{@name}/${name,}/g" $dst
+		sed -i -e "s/{@nameCaps}/${name}/g" -e "s/{@name}/${name,}/g" -e "s/{@namespaceCaps}/${namespace}/g" $dst
 		runSuccess "$dst"
 	fi
 }
@@ -61,10 +58,8 @@ function createEditCommandHandlerFile {
 	else
 		# 创建模型文件
 		cp $vendorDir/template/src/CommandHandler/ModifyCommandHandler.php $dst
-		sed -i -e "s/{@nameCaps}/${name}/g" $dst
-		sed -i -e "s/{@name}/${name,}/g" $dst
-		sed -i -e "s/{@operateCaps}/Edit/g" $dst
-		sed -i -e "s/{@operate}/edit/g" $dst
+		sed -i -e "s/{@nameCaps}/${name}/g" -e "s/{@name}/${name,}/g" -e "s/{@namespaceCaps}/${namespace}/g" $dst
+		sed -i -e "s/{@operateCaps}/Edit/g" -e "s/{@operate}/edit/g" $dst
 		runSuccess "$dst"
 	fi
 }
@@ -77,10 +72,8 @@ function createUtEditCommandHandlerFile {
 	else
 		# 创建模型文件
 		cp $vendorDir/template/tests/ut/CommandHandler/ModifyCommandHandler.php $dst
-		sed -i -e "s/{@nameCaps}/${name}/g" $dst
-		sed -i -e "s/{@name}/${name,}/g" $dst
-		sed -i -e "s/{@operateCaps}/Edit/g" $dst
-		sed -i -e "s/{@operate}/edit/g" $dst
+		sed -i -e "s/{@nameCaps}/${name}/g" -e "s/{@name}/${name,}/g" -e "s/{@namespaceCaps}/${namespace}/g" $dst
+		sed -i -e "s/{@operateCaps}/Edit/g" -e "s/{@operate}/edit/g" $dst
 		runSuccess "$dst"
 	fi
 }
@@ -91,10 +84,8 @@ function createMockEditCommandHandlerFile {
 		runFail "$dst"
 	else
 		cp $vendorDir/template/tests/mock/CommandHandler/ModifyCommandHandler.php $dst
-		sed -i -e "s/{@nameCaps}/${name}/g" $dst
-		sed -i -e "s/{@name}/${name,}/g" $dst
-		sed -i -e "s/{@operateCaps}/Edit/g" $dst
-		sed -i -e "s/{@operate}/edit/g" $dst
+		sed -i -e "s/{@nameCaps}/${name}/g" -e "s/{@name}/${name,}/g" -e "s/{@namespaceCaps}/${namespace}/g" $dst
+		sed -i -e "s/{@operateCaps}/Edit/g" -e "s/{@operate}/edit/g" $dst
 		runSuccess "$dst"
 	fi
 }
@@ -107,8 +98,7 @@ function createCommandHandlerFactoryFile {
 	else
 		# 创建模型文件
 		cp $vendorDir/template/src/CommandHandler/CommandHandlerFactory.php $dst
-		sed -i -e "s/{@nameCaps}/${name}/g" $dst
-		sed -i -e "s/{@name}/${name,}/g" $dst
+		sed -i -e "s/{@nameCaps}/${name}/g" -e "s/{@name}/${name,}/g" -e "s/{@namespaceCaps}/${namespace}/g" $dst
 		runSuccess "$dst"
 	fi
 }
@@ -121,8 +111,7 @@ function createUtCommandHandlerFactoryFile {
 	else
 		# 创建模型文件
 		cp $vendorDir/template/tests/ut/CommandHandler/CommandHandlerFactory.php $dst
-		sed -i -e "s/{@nameCaps}/${name}/g" $dst
-		sed -i -e "s/{@name}/${name,}/g" $dst
+		sed -i -e "s/{@nameCaps}/${name}/g" -e "s/{@name}/${name,}/g" -e "s/{@namespaceCaps}/${namespace}/g" $dst
 		runSuccess "$dst"
 	fi
 }

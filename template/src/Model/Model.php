@@ -1,12 +1,12 @@
 <?php
-namespace {@nameCaps}\Model;
+namespace {@namespaceCaps}\Model;
 
 use Marmot\Core;
 use Marmot\Common\Model\Object;
 use Marmot\Common\Model\IObject;
 
-use {@nameCaps}\Adapter\{@nameCaps}\I{@nameCaps}Adapter;
-use {@nameCaps}\Repository\{@nameCaps}Repository;
+use {@namespaceCaps}\Adapter\{@nameCaps}\I{@nameCaps}Adapter;
+use {@namespaceCaps}\Repository\{@nameCaps}Repository;
 
 class {@nameCaps} implements IObject
 {

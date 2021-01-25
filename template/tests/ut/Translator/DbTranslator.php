@@ -1,10 +1,10 @@
 <?php
-namespace {@nameCaps}\Translator;
+namespace {@namespaceCaps}\Translator;
 
 use PHPUnit\Framework\TestCase;
 
-use {@nameCaps}\Utils\{@nameCaps}Utils;
-use {@nameCaps}\Utils\MockFactory;
+use {@namespaceCaps}\Utils\{@nameCaps}Utils;
+use {@namespaceCaps}\Utils\{@nameCaps}MockFactory;
 
 class {@nameCaps}DbTranslatorTest extends TestCase
 {
@@ -33,7 +33,7 @@ class {@nameCaps}DbTranslatorTest extends TestCase
     public function testArrayToObjectIncorrectArray()
     {
         $result = $this->translator->arrayToObject(array());
-        $this->assertInstanceOf('{@nameCaps}\Model\Null{@nameCaps}', $result);
+        $this->assertInstanceOf('{@namespaceCaps}\Model\Null{@nameCaps}', $result);
     }
 
     public function testObjectToArrayIncorrectObject()
@@ -44,7 +44,7 @@ class {@nameCaps}DbTranslatorTest extends TestCase
 
     public function testArrayToObject()
     {
-        ${@name} = MockFactory::generate{@nameCaps}(1);
+        ${@name} = {@nameCaps}MockFactory::generate{@nameCaps}(1);
 
         $expression['{@name}_id'] = ${@name}->getId();
 
@@ -54,13 +54,13 @@ class {@nameCaps}DbTranslatorTest extends TestCase
         $expression['update_time'] = ${@name}->getUpdateTime();
 
         ${@name} = $this->translator->arrayToObject($expression);
-        $this->assertInstanceof('{@nameCaps}\Model\{@nameCaps}', ${@name});
+        $this->assertInstanceof('{@namespaceCaps}\Model\{@nameCaps}', ${@name});
         $this->compareArrayAndObject($expression, ${@name});
     }
 
     public function testObjectToArray()
     {
-        ${@name} = MockFactory::generate{@nameCaps}(1);
+        ${@name} = {@nameCaps}MockFactory::generate{@nameCaps}(1);
 
         $expression = $this->translator->objectToArray(${@name});
 

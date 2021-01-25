@@ -1,12 +1,12 @@
 <?php
-namespace {@nameCaps}\Repository;
+namespace {@namespaceCaps}\Repository;
 
 use Marmot\Framework\Classes\Repository;
 
-use {@nameCaps}\Model\{@nameCaps};
-use {@nameCaps}\Adapter\{@nameCaps}\I{@nameCaps}Adapter;
-use {@nameCaps}\Adapter\{@nameCaps}\{@nameCaps}DbAdapter;
-use {@nameCaps}\Adapter\{@nameCaps}\{@nameCaps}MockAdapter;
+use {@namespaceCaps}\Model\{@nameCaps};
+use {@namespaceCaps}\Adapter\{@nameCaps}\I{@nameCaps}Adapter;
+use {@namespaceCaps}\Adapter\{@nameCaps}\{@nameCaps}DbAdapter;
+use {@namespaceCaps}\Adapter\{@nameCaps}\{@nameCaps}MockAdapter;
 
 class {@nameCaps}Repository extends Repository implements I{@nameCaps}Adapter
 {

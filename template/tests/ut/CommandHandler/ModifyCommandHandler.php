@@ -1,13 +1,13 @@
 <?php
-namespace {@nameCaps}\CommandHandler\{@nameCaps};
+namespace {@namespaceCaps}\CommandHandler\{@nameCaps};
 
 use Prophecy\Argument;
 use PHPUnit\Framework\TestCase;
 use Marmot\Interfaces\ICommand;
 
-use {@nameCaps}\Model\{@nameCaps};
-use {@nameCaps}\Repository\{@nameCaps}Repository;
-use {@nameCaps}\Command\{@nameCaps}\Edit{@nameCaps}Command;
+use {@namespaceCaps}\Model\{@nameCaps};
+use {@namespaceCaps}\Repository\{@nameCaps}Repository;
+use {@namespaceCaps}\Command\{@nameCaps}\Edit{@nameCaps}Command;
 
 class {@operateCaps}{@nameCaps}CommandHandlerTest extends TestCase
 {
@@ -52,7 +52,7 @@ class {@operateCaps}{@nameCaps}CommandHandlerTest extends TestCase
     {
         $commandHandler = new MockEdit{@nameCaps}CommandHandler();
         $this->assertInstanceOf(
-            '{@nameCaps}\Repository\{@nameCaps}Repository',
+            '{@namespaceCaps}\Repository\{@nameCaps}Repository',
             $commandHandler->get{@nameCaps}Repository()
         );
     }

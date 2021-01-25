@@ -1,7 +1,7 @@
 <?php
-namespace {@nameCaps}\Controller;
+namespace {@namespaceCaps}\Controller;
 
-use {@nameCaps}\Adapter\{@nameCaps}\I{@nameCaps}Adapter;
+use {@namespaceCaps}\Adapter\{@nameCaps}\I{@nameCaps}Adapter;
 use Marmot\Interfaces\IView;
 
 class Mock{@nameCaps}FetchController extends {@nameCaps}FetchController

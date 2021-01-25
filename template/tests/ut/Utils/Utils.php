@@ -1,5 +1,5 @@
 <?php
-namespace {@nameCaps}\Utils;
+namespace {@namespaceCaps}\Utils;
 
 trait {@nameCaps}Utils
 {

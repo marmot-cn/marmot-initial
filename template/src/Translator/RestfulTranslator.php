@@ -1,8 +1,8 @@
 <?php
-namespace {@nameCaps}\Translator;
+namespace {@namespaceCaps}\Translator;
 
-use {@nameCaps}\Model\{@nameCaps};
-use {@nameCaps}\Model\Null{@nameCaps};
+use {@namespaceCaps}\Model\{@nameCaps};
+use {@namespaceCaps}\Model\Null{@nameCaps};
 
 use Marmot\Framework\Common\Translator\RestfulTranslatorTrait;
 use Marmot\Interfaces\IRestfulTranslator;

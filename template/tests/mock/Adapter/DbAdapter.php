@@ -1,10 +1,10 @@
 <?php
-namespace {@nameCaps}\Adapter\{@nameCaps};
+namespace {@namespaceCaps}\Adapter\{@nameCaps};
 
 use Marmot\Interfaces\INull;
 
-use {@nameCaps}\Translator\{@nameCaps}DbTranslator;
-use {@nameCaps}\Adapter\{@nameCaps}\Query\{@nameCaps}RowCacheQuery;
+use {@namespaceCaps}\Translator\{@nameCaps}DbTranslator;
+use {@namespaceCaps}\Adapter\{@nameCaps}\Query\{@nameCaps}RowCacheQuery;
 
 class Mock{@nameCaps}DbAdapter extends {@nameCaps}DbAdapter
 {

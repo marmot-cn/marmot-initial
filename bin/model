@@ -3,9 +3,9 @@
 function initial {
 	# 读取变量名称
 	name=$1
-	dst="$srcDir/${name}/Model"
-	utDst="$utDir/${name}/Model"
-	mockDst="$mockDir/${name}/Model"
+	dst="$srcDir/${namespace}/Model"
+	utDst="$utDir/${namespace}/Model"
+	mockDst="$mockDir/${namespace}/Model"
 
 	# 创建模型路径
 	mkdir -p $dst
@@ -20,7 +20,7 @@ function createModelFile {
 	else
 		# 创建模型文件
 		cp $vendorDir/template/src/Model/Model.php $dst
-		sed -i -e "s/{@nameCaps}/${name}/g" $dst
+		sed -i -e "s/{@nameCaps}/${name}/g" -e "s/{@name}/${name,}/g" -e "s/{@namespaceCaps}/${namespace}/g" $dst
 		runSuccess "$dst"
 	fi
 }
@@ -31,7 +31,7 @@ function createUtModelFile {
 		runFail "$dst"
 	else
 		cp $vendorDir/template/tests/ut/Model/Model.php $dst
-		sed -i -e "s/{@nameCaps}/${name}/g" -e "s/{@name}/${name,}/g" $dst	
+		sed -i -e "s/{@nameCaps}/${name}/g" -e "s/{@name}/${name,}/g" -e "s/{@namespaceCaps}/${namespace}/g" $dst
 		runSuccess "$dst"
 	fi
 }
@@ -42,8 +42,7 @@ function createMockModelFile {
 		runFail "$dst"
 	else
 		cp $vendorDir/template/tests/mock/Model/Model.php $dst
-		sed -i -e "s/{@nameCaps}/${name}/g" $dst
-		sed -i -e "s/{@name}/${name,}/g" $dst
+		sed -i -e "s/{@nameCaps}/${name}/g" -e "s/{@name}/${name,}/g" -e "s/{@namespaceCaps}/${namespace}/g" $dst
 		runSuccess "$dst"
 	fi
 }
@@ -55,7 +54,7 @@ function createNullModelFile {
 	else
 		# 创建模型文件
 		cp $vendorDir/template/src/Model/NullModel.php $dst
-		sed -i -e "s/{@nameCaps}/${name}/g" $dst	
+		sed -i -e "s/{@nameCaps}/${name}/g" -e "s/{@name}/${name,}/g" -e "s/{@namespaceCaps}/${namespace}/g" $dst
 		runSuccess "$dst"
 	fi
 }
@@ -67,7 +66,7 @@ function createUtNullModelFile {
 	else
 		# 创建模型文件
 		cp $vendorDir/template/tests/ut/Model/NullModel.php $dst
-		sed -i -e "s/{@nameCaps}/${name}/g" -e "s/{@name}/${name,}/g" $dst	
+		sed -i -e "s/{@nameCaps}/${name}/g" -e "s/{@name}/${name,}/g" -e "s/{@namespaceCaps}/${namespace}/g" $dst
 		runSuccess "$dst"
 	fi
 }
