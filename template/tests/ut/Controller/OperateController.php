@@ -40,7 +40,7 @@ class {@nameCaps}OperateControllerTest extends TestCase
     public function testImplementsIOperateController()
     {
         $this->assertInstanceOf(
-            'Marmot\Framework\Common\Controller\Interfaces\IOperateController',
+            'Marmot\Framework\Common\Controller\IOperateController',
             $this->controller
         );
     }

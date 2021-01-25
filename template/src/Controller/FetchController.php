@@ -4,7 +4,7 @@ namespace {@nameCaps}\Controller;
 use Marmot\Interfaces\IView;
 use Marmot\Framework\Classes\Controller;
 
-use Marmot\Framework\Common\Controller\Interfaces\IFetchController;
+use Marmot\Framework\Common\Controller\IFetchController;
 use Marmot\Framework\Common\Controller\FetchControllerTrait;
 
 use {@nameCaps}\Adapter\{@nameCaps}\I{@nameCaps}Adapter;

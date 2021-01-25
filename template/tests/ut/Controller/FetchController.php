@@ -40,7 +40,7 @@ class {@nameCaps}FetchControllerTest extends TestCase
     public function testImplementsIOperateController()
     {
         $this->assertInstanceOf(
-            'Marmot\Framework\Common\Controller\Interfaces\IFetchController',
+            'Marmot\Framework\Common\Controller\IFetchController',
             $this->controller
         );
     }

@@ -8,7 +8,7 @@ use Marmot\Framework\Controller\JsonApiTrait;
 
 use Marmot\Core;
 
-use Marmot\Framework\Common\Controller\Interfaces\IOperateController;
+use Marmot\Framework\Common\Controller\IOperateController;
 
 use {@nameCaps}\Model\{@nameCaps};
 use {@nameCaps}\View\{@nameCaps}View;
