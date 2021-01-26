@@ -12,24 +12,24 @@ function initial {
 	mkdir -p $mockDst
 }
 
-function createMarmotRepositoryFile {
+function createRepositoryFile {
 	local dst="$dst/${name}Repository.php"
 	if [ -f $dst -a $overwrite = 0 ];then
 		runFail "$dst"
 	else
 		# 创建模型文件
-		cp $vendorDir/template/src/Repository/Marmot/Repository.php $dst
+		cp $vendorDir/template/src/Repository/Repository.php $dst
 		sed -i -e "s/{@nameCaps}/${name}/g" -e "s/{@name}/${name,}/g" -e "s/{@namespaceCaps}/${namespace}/g" $dst
 		runSuccess "$dst"
 	fi
 }
 
-function createMarmotUtRepositoryFile {
+function createUtRepositoryFile {
 	local dst="$utDst/${name}RepositoryTest.php"
 	if [ -f $dst -a $overwrite = 0 ];then
 		runFail "$dst"
 	else
-		cp $vendorDir/template/tests/ut/Repository/Marmot/Repository.php $dst
+		cp $vendorDir/template/tests/ut/Repository/Repository.php $dst
 		sed -i -e "s/{@nameCaps}/${name}/g" -e "s/{@name}/${name,}/g" -e "s/{@namespaceCaps}/${namespace}/g" $dst
 		runSuccess "$dst"
 	fi
@@ -47,8 +47,8 @@ function createMockRepositoryFile {
 }
 
 function generate {
-	createMarmotRepositoryFile
-	createMarmotUtRepositoryFile
+	createRepositoryFile
+	createUtRepositoryFile
 	createMockRepositoryFile
 }
 

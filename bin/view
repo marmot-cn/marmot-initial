@@ -14,7 +14,7 @@ function createViewFile {
 		runFail "$dst"
 	else
 		# 创建模型文件
-		cp $vendorDir/template/src/View/Marmot/View.php $dst
+		cp $vendorDir/template/src/View/View.php $dst
 		sed -i -e "s/{@nameCaps}/${name}/g" -e "s/{@name}/${name,}/g" -e "s/{@namespaceCaps}/${namespace}/g" $dst
 		runSuccess "$dst"
 	fi
@@ -26,7 +26,7 @@ function createSchemaFile {
 		runFail "$dst"
 	else
 		# 创建模型文件
-		cp $vendorDir/template/src/View/Marmot/Schema.php $dst
+		cp $vendorDir/template/src/View/Schema.php $dst
 		sed -i -e "s/{@nameCaps}/${name}/g" -e "s/{@name}/${name,}/g" -e "s/{@namespaceCaps}/${namespace}/g" $dst
 		runSuccess "$dst"
 	fi
