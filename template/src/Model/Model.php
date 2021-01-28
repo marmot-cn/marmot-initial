@@ -17,6 +17,8 @@ class {@nameCaps} implements IObject
      */
     protected $id;
 
+    protected $repository;
+
 	public function __construct(int $id = 0)
     {
         $this->id = $id;
