@@ -23,8 +23,8 @@ class {@nameCaps}View implements IView
         $this->encodingParameters = $encodingParameters;
 
         $this->rules = array(
-            \{@nameCaps}\Model\{@nameCaps}::class =>
-            \{@nameCaps}\View\{@nameCaps}Schema::class
+            \{@namespaceCaps}\Model\{@nameCaps}::class =>
+            \{@namespaceCaps}\View\{@nameCaps}Schema::class
         );
     }
 

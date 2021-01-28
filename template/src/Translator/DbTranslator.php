@@ -3,8 +3,6 @@ namespace {@namespaceCaps}\Translator;
 
 use Marmot\Interfaces\ITranslator;
 
-use UserGroup\Model\UserGroup;
-
 use {@namespaceCaps}\Model\{@nameCaps};
 use {@namespaceCaps}\Model\Null{@nameCaps};
 
