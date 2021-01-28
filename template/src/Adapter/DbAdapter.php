@@ -7,7 +7,7 @@ use Marmot\Framework\Common\Adapter\DbAdapterTrait;
 
 use {@namespaceCaps}\Model\{@nameCaps};
 use {@namespaceCaps}\Model\Null{@nameCaps};
-use {@namespaceCaps}\Translator\{@nameCaps}DBTranslator;
+use {@namespaceCaps}\Translator\{@nameCaps}DbTranslator;
 use {@namespaceCaps}\Adapter\{@nameCaps}\Query\{@nameCaps}RowCacheQuery;
 
 class {@nameCaps}DBAdapter implements I{@nameCaps}Adapter
